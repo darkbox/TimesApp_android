@@ -10,7 +10,15 @@ package org.rj.timesapp;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int bg_dark=0x7f070000;
+        public static final int darkText=0x7f070004;
+        public static final int gray=0x7f070001;
+        public static final int label=0x7f070002;
+        public static final int white=0x7f070003;
+    }
     public static final class dimen {
+        public static final int TitleSize=0x7f040002;
         /**  Default screen margins, per the Android Design guidelines. 
 
          Customize dimensions originally defined in res/values/dimens.xml (such as
@@ -19,23 +27,69 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
+        public static final int inputSizeLogin=0x7f040003;
+        public static final int labelLogin=0x7f040004;
+        public static final int time=0x7f040005;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int btn_success=0x7f020000;
+        public static final int btn_success_normal=0x7f020001;
+        public static final int btn_success_pressed=0x7f020002;
+        public static final int btn_switch=0x7f020003;
+        public static final int btn_tab=0x7f020004;
+        public static final int btn_tab_inactive=0x7f020005;
+        public static final int btn_triangle=0x7f020006;
+        public static final int btn_warning=0x7f020007;
+        public static final int btn_warning_normal=0x7f020008;
+        public static final int btn_warning_pressed=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int rounded_edittext=0x7f02000b;
+        public static final int rounded_input=0x7f02000c;
+        public static final int switch_off=0x7f02000d;
+        public static final int switch_on=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f080000;
+        public static final int LinearLayout1=0x7f09000c;
+        public static final int action_settings=0x7f090013;
+        public static final int add=0x7f090007;
+        public static final int billed=0x7f09000b;
+        public static final int btn_activity=0x7f090002;
+        public static final int btn_login=0x7f090012;
+        public static final int btn_timer=0x7f090001;
+        public static final int date=0x7f090003;
+        public static final int label1=0x7f09000e;
+        public static final int label2=0x7f090010;
+        public static final int name=0x7f090000;
+        public static final int note=0x7f090009;
+        public static final int passwordEditText=0x7f090011;
+        public static final int playStop=0x7f090005;
+        public static final int projects=0x7f090008;
+        public static final int reset=0x7f090006;
+        public static final int textView1=0x7f09000a;
+        public static final int time=0x7f090004;
+        public static final int title=0x7f09000d;
+        public static final int usernameEditText=0x7f09000f;
     }
     public static final class layout {
-        public static final int activity_login=0x7f030000;
+        public static final int activity_cronos=0x7f030000;
+        public static final int activity_login=0x7f030001;
     }
     public static final class menu {
-        public static final int login=0x7f070000;
+        public static final int login=0x7f080000;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
+        public static final int activity=0x7f050008;
+        public static final int add=0x7f050006;
         public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        public static final int billed=0x7f05000b;
+        public static final int login=0x7f050002;
+        public static final int note=0x7f050009;
+        public static final int password=0x7f050004;
+        public static final int project=0x7f05000a;
+        public static final int reset=0x7f050005;
+        public static final int timer=0x7f050007;
+        public static final int username=0x7f050003;
     }
     public static final class style {
         /** 
