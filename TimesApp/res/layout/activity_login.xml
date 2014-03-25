@@ -40,15 +40,16 @@
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:ems="10"
         android:background="@drawable/rounded_edittext"
-        android:textColor="@color/gray"
-        android:textSize="@dimen/inputSizeLogin"
-        android:maxLength="80"
-        android:paddingLeft="15dp"
+        android:ems="10"
         android:hint="Username"
+        android:lines="1"
+        android:maxLength="80"
+        android:maxLines="1"
+        android:paddingLeft="15dp"
         android:text="Username"
-         >
+        android:textColor="@color/gray"
+        android:textSize="@dimen/inputSizeLogin" >
 
         <requestFocus />
     </EditText>

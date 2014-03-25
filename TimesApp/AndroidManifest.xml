@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:label="Cronos" android:name="CronosActivity"></activity>
+        <activity android:name="ListActivity" android:label="Activities"></activity>
     </application>
 
 </manifest>

@@ -28,7 +28,9 @@
             android:layout_weight="1"
             android:background="@drawable/btn_tab"
             android:textColor="@color/gray"
-            android:text="@string/timer" />
+            android:text="@string/timer"
+            android:onClick="actions"
+            android:tag="0" />
 
         <Button
             android:id="@+id/btn_activity"
@@ -37,7 +39,9 @@
             android:layout_weight="1"
             android:background="@drawable/btn_tab_inactive"
             android:textColor="@color/darkText"
-            android:text="@string/activity" />
+            android:text="@string/activity"
+            android:onClick="actions"
+            android:tag="1" />
     </LinearLayout>
 
     <TextView
@@ -49,25 +53,25 @@
         android:text="0000-00-00"
         android:textColor="@color/gray"
         android:textSize="@dimen/labelLogin" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="match_parent"
+    
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="00:00:00"
         android:textColor="@color/gray"
         android:textSize="@dimen/time" />
 
     <Button
         android:id="@+id/playStop"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:background="@drawable/btn_triangle"
-        android:text="" />
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_play"
+        android:onClick="actions"
+        android:tag="2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,7 +86,9 @@
             android:layout_marginRight="5dp"
             android:background="@drawable/btn_warning"
             android:textColor="@color/white"
-            android:text="@string/reset" />
+            android:text="@string/reset"
+            android:onClick="actions"
+            android:tag="3" />
 
         <Button
             android:id="@+id/add"
@@ -93,7 +99,9 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/btn_success"
             android:textColor="@color/white"
-            android:text="@string/add" />
+            android:text="@string/add"
+            android:onClick="actions"
+            android:tag="4" />
     </LinearLayout>
 
     <Spinner
