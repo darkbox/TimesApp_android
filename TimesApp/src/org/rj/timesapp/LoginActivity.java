@@ -10,7 +10,12 @@ import org.json.JSONObject;
 import org.rj.lib.JSONParser;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -24,6 +29,9 @@ public class LoginActivity extends Activity {
 	
 	//Views
 	private EditText usernameInput, passwordInput;
+	
+	//ProgressDialog
+	private ProgressDialog pDialog;
 	
 	//JSONParser
 	JSONParser jParser = new JSONParser();
@@ -60,38 +68,11 @@ public class LoginActivity extends Activity {
 		if(credentials[0].length() < 3 || credentials[1].length() < 3){
 			
 		}else{  // Comprueba credenciales
-			
-			// Creando los parametros
-            List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("username", credentials[0]));
-            params.add(new BasicNameValuePair("password", credentials[1]));
-        	
-            // Envia la petición al servidor
-            JSONObject json = null;
-            json = jParser.makeHttpRequest(url_login, "POST", params);
-            Log.d("Esperando respuesta", json.toString());
-           
-            
-            // Comprobar respuesta del servidor
-            try {
-                int success = json.getInt(TAG_SUCCESS);
- 
-                if (success == 1) {
-	                	// Inicia actividad
-	        			Intent cronos = new Intent(this, CronosActivity.class);
-	        			startActivity(cronos);
-	        			
-	        			// Finaliza actividad login
-	        			finish();
-                } else {
-                    	// Fallo
-                		Toast.makeText(this, json.getString("message"), Toast.LENGTH_LONG).show();
-                		
-                }
-            } catch (JSONException e) {
-                	e.printStackTrace();
-            }       
-			
+			if(isNetworkConnected()){
+				new CheckLogin ().execute();
+			}else{
+				Toast.makeText(this, "Conection with server failed", Toast.LENGTH_LONG).show();
+			}
 		}
 	}
 	
@@ -103,5 +84,80 @@ public class LoginActivity extends Activity {
 		return true;
 	}
 
+	/**
+	 * Comprueba si hay conexión a internet
+	 * @return
+	 */
+	public boolean isNetworkConnected() {
+        final ConnectivityManager conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo activeNetwork = conMgr.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.getState() == NetworkInfo.State.CONNECTED;
+   }
+	
+	/**
+     * Background Async Task para comprobar el login
+     * */
+    class CheckLogin extends AsyncTask<String, String, String> {
+ 
+        /**
+         * Antes de crear el hilo crea y muestra el pDialog
+         * */
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(LoginActivity.this);
+            pDialog.setMessage("Login...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+ 
+        /**
+         * Realiza el login
+         * */
+        protected String doInBackground(String... args) {
+            String username = usernameInput.getText().toString();
+            String password = passwordInput.getText().toString();
+
+            // Creando los parametros
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("username", username));
+            params.add(new BasicNameValuePair("password", password));
+ 
+            // Obteniendo el objeto  JSON Object
+            JSONObject json = jParser.makeHttpRequest(url_login,  "POST", params);
+            Log.d("Create Response", json.toString());
+ 
+            // Comprueba la etiqueta de exito
+            try {
+                int success = json.getInt(TAG_SUCCESS);
+
+                if (success == 1) {
+                	 // Inicia actividad
+        			Intent cronos = new Intent(getApplicationContext(), CronosActivity.class);
+        			startActivity(cronos);
+        			
+        			// Finaliza actividad login
+        			finish();
+     
+                } else {
+                    // fallo
+                	Log.i("access","Wrong username or password");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+ 
+        /**
+         * Después de terminar elimina el pDialog
+         * **/
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once done
+            pDialog.dismiss();
+        }
+ 
+    }
 	
 }

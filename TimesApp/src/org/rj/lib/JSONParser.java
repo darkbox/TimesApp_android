@@ -50,6 +50,7 @@ public class JSONParser {
                 HttpResponse httpResponse = httpClient.execute(httpPost);
                 HttpEntity httpEntity = httpResponse.getEntity();
                 is = httpEntity.getContent();
+                Log.i("asasd","POST seleccionado");
  
             }else if(method == "GET"){
                 // request method is GET
