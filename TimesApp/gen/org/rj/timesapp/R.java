@@ -32,27 +32,28 @@ public final class R {
         public static final int time=0x7f040005;
     }
     public static final class drawable {
-        public static final int btn_play=0x7f020000;
-        public static final int btn_stop=0x7f020001;
-        public static final int btn_success=0x7f020002;
-        public static final int btn_success_normal=0x7f020003;
-        public static final int btn_success_pressed=0x7f020004;
-        public static final int btn_switch=0x7f020005;
-        public static final int btn_tab=0x7f020006;
-        public static final int btn_tab_inactive=0x7f020007;
-        public static final int btn_triangle=0x7f020008;
-        public static final int btn_warning=0x7f020009;
-        public static final int btn_warning_normal=0x7f02000a;
-        public static final int btn_warning_pressed=0x7f02000b;
-        public static final int ic_launcher=0x7f02000c;
-        public static final int rounded_edittext=0x7f02000d;
-        public static final int rounded_input=0x7f02000e;
-        public static final int switch_off=0x7f02000f;
-        public static final int switch_on=0x7f020010;
+        public static final int alert=0x7f020000;
+        public static final int btn_play=0x7f020001;
+        public static final int btn_stop=0x7f020002;
+        public static final int btn_success=0x7f020003;
+        public static final int btn_success_normal=0x7f020004;
+        public static final int btn_success_pressed=0x7f020005;
+        public static final int btn_switch=0x7f020006;
+        public static final int btn_tab=0x7f020007;
+        public static final int btn_tab_inactive=0x7f020008;
+        public static final int btn_triangle=0x7f020009;
+        public static final int btn_warning=0x7f02000a;
+        public static final int btn_warning_normal=0x7f02000b;
+        public static final int btn_warning_pressed=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int rounded_edittext=0x7f02000e;
+        public static final int rounded_input=0x7f02000f;
+        public static final int switch_off=0x7f020010;
+        public static final int switch_on=0x7f020011;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f09000c;
-        public static final int action_settings=0x7f090014;
+        public static final int action_settings=0x7f090015;
         public static final int add=0x7f090007;
         public static final int billed=0x7f09000b;
         public static final int btn_activity=0x7f090002;
@@ -67,6 +68,7 @@ public final class R {
         public static final int passwordEditText=0x7f090011;
         public static final int pid=0x7f090013;
         public static final int playStop=0x7f090005;
+        public static final int project_name=0x7f090014;
         public static final int projects=0x7f090008;
         public static final int reset=0x7f090006;
         public static final int textView1=0x7f09000a;
@@ -77,7 +79,7 @@ public final class R {
         public static final int activity_cronos=0x7f030000;
         public static final int activity_list=0x7f030001;
         public static final int activity_login=0x7f030002;
-        public static final int list_activity=0x7f030003;
+        public static final int list_item=0x7f030003;
     }
     public static final class menu {
         public static final int login=0x7f080000;

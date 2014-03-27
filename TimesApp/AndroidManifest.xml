@@ -6,7 +6,8 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -23,7 +24,6 @@
             </intent-filter>
         </activity>
         <activity android:label="Cronos" android:name="CronosActivity"></activity>
-        <activity android:name="ListActivity" android:label="Activities"></activity>
+        <activity android:name="ListActivitiesActivity" android:label="Activities"></activity>
     </application>
-
 </manifest>

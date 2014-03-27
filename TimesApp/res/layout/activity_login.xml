@@ -47,7 +47,7 @@
         android:maxLength="80"
         android:maxLines="1"
         android:paddingLeft="15dp"
-        android:text="Username"
+        android:text="username"
         android:textColor="@color/gray"
         android:textSize="@dimen/inputSizeLogin" >
 
@@ -77,7 +77,7 @@
         android:paddingLeft="15dp"
         android:inputType="textPassword"
         android:hint="Password"
-        android:text="Password"
+        android:text="password"
          >
 
         <requestFocus />

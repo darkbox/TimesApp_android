@@ -68,7 +68,7 @@ public class CronosActivity extends Activity {
 		
 		switch (action) {
 		case 1: // ListActivity
-			Intent listActivity = new Intent(this, ListActivity.class);
+			Intent listActivity = new Intent(this, ListActivitiesActivity.class);
 			startActivity(listActivity);
 			break;
 		case 2: // Play/Stop

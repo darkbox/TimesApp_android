@@ -10,7 +10,18 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" />
- 
+ 	
+    <!-- Name Label -->
+    <TextView
+        android:id="@+id/project_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="6dip"
+        android:paddingLeft="6dip"
+        android:textSize="17dip"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+    
     <!-- Name Label -->
     <TextView
         android:id="@+id/name"
@@ -19,6 +30,7 @@
         android:paddingTop="6dip"
         android:paddingLeft="6dip"
         android:textSize="17dip"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/white" />
  
 </LinearLayout>
