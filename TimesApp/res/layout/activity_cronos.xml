@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginLeft="85dp"
-        android:text="0000-00-00"
+        android:text=""
         android:textColor="@color/gray"
         android:textSize="@dimen/labelLogin" />
     
@@ -115,7 +115,6 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:background="@drawable/rounded_input"
-        
          />
 
     <EditText

@@ -17,7 +17,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
 
@@ -44,9 +43,13 @@ public class ListActivitiesActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
+			// Animación de transición
+			overridePendingTransition( R.anim.right_in, R.anim.left_out);
+			
 			// Oculta el título del layout
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
-			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			//getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			setTheme(R.style.AppTheme);
 			setContentView(R.layout.activity_list);
 			
 			// Hashmap para el ListView

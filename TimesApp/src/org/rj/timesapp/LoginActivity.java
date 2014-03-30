@@ -21,7 +21,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -41,9 +40,13 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		// Animación de transición
+		overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
+		
 		// Oculta el título del layout
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		//getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		setTheme(R.style.AppTheme);
 		setContentView(R.layout.activity_login);
 		
 		// Campos de texto
@@ -71,7 +74,7 @@ public class LoginActivity extends Activity {
 			if(isNetworkConnected()){
 				new CheckLogin ().execute();
 			}else{
-				Toast.makeText(this, "Conection with server failed", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, "No Internet connection was found", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -98,6 +101,8 @@ public class LoginActivity extends Activity {
      * Background Async Task para comprobar el login
      * */
     class CheckLogin extends AsyncTask<String, String, String> {
+    	
+    	private int success = 0;
  
         /**
          * Antes de crear el hilo crea y muestra el pDialog
@@ -124,26 +129,12 @@ public class LoginActivity extends Activity {
             params.add(new BasicNameValuePair("username", username));
             params.add(new BasicNameValuePair("password", password));
  
-            // Obteniendo el objeto  JSON Object
-            JSONObject json = jParser.makeHttpRequest(url_login,  "POST", params);
-            Log.d("Create Response", json.toString());
- 
             // Comprueba la etiqueta de exito
             try {
-                int success = json.getInt(TAG_SUCCESS);
-
-                if (success == 1) {
-                	 // Inicia actividad
-        			Intent cronos = new Intent(getApplicationContext(), CronosActivity.class);
-        			startActivity(cronos);
-        			
-        			// Finaliza actividad login
-        			finish();
-     
-                } else {
-                    // fallo
-                	Log.i("access","Wrong username or password");
-                }
+            	// Obteniendo el objeto  JSON Object
+                JSONObject json = jParser.makeHttpRequest(url_login,  "POST", params);
+                Log.d("Create Response", json.toString());
+                success = json.getInt(TAG_SUCCESS);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -156,6 +147,18 @@ public class LoginActivity extends Activity {
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
+            
+            if (success == 1) {
+	           	// Inicia actividad
+	   			Intent cronos = new Intent(getApplicationContext(), CronosActivity.class);
+	   			startActivity(cronos);
+	   			
+	   			// Finaliza actividad login
+	   			finish();
+           } else {
+               // fallo
+        	   Log.i("access","Wrong username or password");
+           }
         }
  
     }
