@@ -14,5 +14,7 @@
     <string name="note">Note</string>
     <string name="project">Project</string>
     <string name="billed">Billed</string>
+    <string name="btn_save">Save Changes</string>
+    <string name="settings">Settings</string>
 
 </resources>

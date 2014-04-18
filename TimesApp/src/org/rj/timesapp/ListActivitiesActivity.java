@@ -12,6 +12,9 @@ import org.rj.lib.JSONParser;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +22,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class ListActivitiesActivity extends ListActivity {
 	
@@ -56,7 +60,17 @@ public class ListActivitiesActivity extends ListActivity {
 	        activityList = new ArrayList<HashMap<String, String>>();
 	 
 	        // Carga las actividades en segundo plano
-	        new LoadAllActivities().execute();
+	        if(isNetworkConnected()){
+	        	try{
+	        		new LoadAllActivities().execute();
+				}catch(Exception e){
+					Log.e("Connection","No server");
+					Toast.makeText(this, "Server not found", Toast.LENGTH_LONG).show();
+				}
+			}else{
+				Toast.makeText(this, "No Internet connection was found", Toast.LENGTH_LONG).show();
+			}
+	        
 	}
 
 	/**
@@ -76,6 +90,18 @@ public class ListActivitiesActivity extends ListActivity {
 			break;
 		}
 	}
+	
+	/**
+	 * Comprueba si hay conexión a internet
+	 * @return
+	 */
+	private boolean isNetworkConnected() {
+        final ConnectivityManager conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo activeNetwork = conMgr.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.getState() == NetworkInfo.State.CONNECTED;
+   }
+	
+
 	
 	/**
      * Background Async Task to Load all product by making HTTP Request

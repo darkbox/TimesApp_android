@@ -26,5 +26,6 @@
         </activity>
         <activity android:label="Cronos" android:name="CronosActivity"></activity>
         <activity android:name="ListActivitiesActivity" android:label="Activities"></activity>
+        <activity android:name="SettingsActivity" android:label="Settings"></activity>
     </application>
 </manifest>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/settings"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/TitleSize" />
+    <EditText
+        android:id="@+id/remoteServerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="TimesApp&apos;s server"
+        android:lines="1"
+        android:maxLength="80"
+        android:maxLines="1"
+        android:paddingLeft="15dp"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/inputSizeLogin" >
+        <requestFocus />
+    </EditText>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_success"
+        android:onClick="save"
+        android:text="@string/btn_save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/inputSizeLogin" />
+</LinearLayout>

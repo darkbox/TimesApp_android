@@ -59,12 +59,13 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0a000c;
-        public static final int action_settings=0x7f0a0015;
+        public static final int action_settings=0x7f0a0017;
         public static final int add=0x7f0a0007;
         public static final int billed=0x7f0a000b;
         public static final int btn_activity=0x7f0a0002;
         public static final int btn_login=0x7f0a0012;
         public static final int btn_timer=0x7f0a0001;
+        public static final int button1=0x7f0a0014;
         public static final int chronometer=0x7f0a0004;
         public static final int date=0x7f0a0003;
         public static final int label1=0x7f0a000e;
@@ -72,10 +73,11 @@ public final class R {
         public static final int name=0x7f0a0000;
         public static final int note=0x7f0a0009;
         public static final int passwordEditText=0x7f0a0011;
-        public static final int pid=0x7f0a0013;
+        public static final int pid=0x7f0a0015;
         public static final int playStop=0x7f0a0005;
-        public static final int project_name=0x7f0a0014;
+        public static final int project_name=0x7f0a0016;
         public static final int projects=0x7f0a0008;
+        public static final int remoteServerEditText=0x7f0a0013;
         public static final int reset=0x7f0a0006;
         public static final int textView1=0x7f0a000a;
         public static final int title=0x7f0a000d;
@@ -85,8 +87,9 @@ public final class R {
         public static final int activity_cronos=0x7f030000;
         public static final int activity_list=0x7f030001;
         public static final int activity_login=0x7f030002;
-        public static final int list_item=0x7f030003;
-        public static final int spinner_item=0x7f030004;
+        public static final int activity_settings=0x7f030003;
+        public static final int list_item=0x7f030004;
+        public static final int spinner_item=0x7f030005;
     }
     public static final class menu {
         public static final int login=0x7f090000;
@@ -97,11 +100,13 @@ public final class R {
         public static final int add=0x7f060006;
         public static final int app_name=0x7f060000;
         public static final int billed=0x7f06000b;
+        public static final int btn_save=0x7f06000c;
         public static final int login=0x7f060002;
         public static final int note=0x7f060009;
         public static final int password=0x7f060004;
         public static final int project=0x7f06000a;
         public static final int reset=0x7f060005;
+        public static final int settings=0x7f06000d;
         public static final int timer=0x7f060007;
         public static final int username=0x7f060003;
     }
